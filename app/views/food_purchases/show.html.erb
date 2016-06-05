@@ -1,0 +1,45 @@
+<div class="page-header">
+  <h3>Food Purchase #<%= @food_purchase.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <dl class="dl-horizontal">
+      <dt>Purchase date</dt>
+      <dd><%= @food_purchase.purchase_date %></dd>
+
+      <dt>Brand</dt>
+      <dd><%= @food_purchase.brand %></dd>
+
+      <dt>Volume</dt>
+      <dd><%= @food_purchase.volume %></dd>
+
+      <dt>Run out date</dt>
+      <dd><%= @food_purchase.run_out_date %></dd>
+
+      <!-- <dt>User</dt>
+      <dd><%= @food_purchase.user_id %></dd> -->
+
+      <dt>Dog</dt>
+      <dd>
+        <a href="/dogs/ <%= @food_purchase.dog_id %>">
+                <%= @food_purchase.dog.name %>
+        </a>
+
+      </dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/food_purchases" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/food_purchases/<%= @food_purchase.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_food_purchase/<%= @food_purchase.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

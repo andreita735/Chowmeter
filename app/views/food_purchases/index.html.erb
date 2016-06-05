@@ -1,0 +1,47 @@
+<div class="page-header">
+  <h1>
+    Food purchases
+    <a href="/food_purchases/new" class="btn btn-lg btn-primary">New Food purchase</a>
+  </h1>
+  <h9>*Assumes feeding starts on Purchase Date</h9>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Purchase date</th>
+        <th>Brand</th>
+        <th>Volume (lbs)</th>
+        <th>Run out date</th>
+        <!-- <th>User</th> -->
+        <th>Dog</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @food_purchases.each do |food_purchase| %>
+      <tr>
+        <td><%= food_purchase.purchase_date %></td>
+        <td><%= food_purchase.brand %></td>
+        <td><%= food_purchase.volume %></td>
+        <td><%= food_purchase.run_out_date %></td>
+        <!-- <td>
+          <a href="/users/<%= food_purchase.user_id %>">
+            <%= food_purchase.user_id %>
+          </a>
+          </td> -->
+        <td>
+          <a href="/dogs/ <%= food_purchase.dog_id %>">
+          <%= food_purchase.dog.name %>
+          </a>
+        </td>
+        <td>
+          <a href="/food_purchases/<%= food_purchase.id %>" class="btn btn-default">Show</a>
+          <a href="/food_purchases/<%= food_purchase.id %>/edit" class="btn btn-default">Edit</a>
+          <a href="/delete_food_purchase/<%= food_purchase.id %>" class="btn btn-default" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

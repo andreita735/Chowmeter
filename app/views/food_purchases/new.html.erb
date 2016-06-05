@@ -1,0 +1,82 @@
+<!-- Validation failure messages -->
+<% if @food_purchase.errors.any? %>
+  <% @food_purchase.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Food Purchase</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_food_purchase" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for purchase_date -->
+      <div class="form-group">
+        <label for="purchase_date" class="control-label">
+          Purchase date
+        </label>
+
+        <input type="text" id="purchase_date" name="purchase_date" placeholder="Purchase date" class="form-control" value="<%= @food_purchase.purchase_date %>">
+      </div>
+
+      <!-- Label and input for brand -->
+      <div class="form-group">
+        <label for="brand" class="control-label">
+          Brand
+        </label>
+
+        <input type="text" id="brand" name="brand" placeholder="Brand" class="form-control" value="<%= @food_purchase.brand %>">
+      </div>
+
+      <!-- Label and input for volume -->
+      <div class="form-group">
+        <label for="volume" class="control-label">
+          Volume
+        </label>
+
+        <input type="text" id="volume" name="volume" placeholder="Volume" class="form-control" value="<%= @food_purchase.volume %>">
+      </div>
+
+      <!-- Label and input for run_out_date -->
+      <div class="form-group">
+        <label for="run_out_date" class="control-label">
+          Run out date
+        </label>
+
+        <input type="text" id="run_out_date" name="run_out_date" placeholder="Run out date" class="form-control" value="<%= @food_purchase.run_out_date %>">
+      </div>
+
+      <!-- Label and input for user_id -->
+      <div class="form-group">
+        <label for="user_id" class="control-label">
+          User
+        </label>
+
+        <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @food_purchase.user_id %>">
+      </div>
+
+      <!-- Label and input for dog_id -->
+      <div class="form-group">
+        <label for="dog_id" class="control-label">
+          Dog
+        </label>
+
+                <%= select_tag(:dog_id, options_from_collection_for_select(Dog.order("name ASC"), :id, :name, @food_purchase.dog_id), :class => "form-control") %>
+      </div>
+
+      <button class="btn btn-success">
+        Create Food Purchase
+      </button>
+      or
+      <a href="/food_purchases">Cancel</a>
+    </form>
+  </div>
+</div>

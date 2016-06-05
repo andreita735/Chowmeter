@@ -1,0 +1,73 @@
+<!-- Validation failure messages -->
+<% if @dog.errors.any? %>
+  <% @dog.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add a Dog</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_dog" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for name -->
+      <div class="form-group">
+        <label for="name" class="control-label">
+          Name
+        </label>
+
+        <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<%= @dog.name %>">
+      </div>
+
+      <!-- Label and input for dob -->
+      <div class="form-group">
+        <label for="dob" class="control-label">
+          Dob
+        </label>
+
+        <input type="text" id="dob" name="dob" placeholder="Dob" class="form-control" value="<%= @dog.dob %>">
+      </div>
+
+      <!-- Label and input for breed -->
+      <div class="form-group">
+        <label for="breed" class="control-label">
+          Breed
+        </label>
+
+        <input type="text" id="breed" name="breed" placeholder="Breed" class="form-control" value="<%= @dog.breed %>">
+      </div>
+
+      <!-- Label and input for consumption_per_day -->
+      <div class="form-group">
+        <label for="consumption_per_day" class="control-label">
+          Consumption (cups) per day
+        </label>
+
+        <input type="text" id="consumption_per_day" name="consumption_per_day" placeholder="Consumption per day" class="form-control" value="<%= @dog.consumption_per_day %>">
+      </div>
+
+      <!-- Label and input for user_id -->
+      <!-- <div class="form-group">
+        <label for="user_id" class="control-label">
+          User
+        </label>
+
+        <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @dog.user_id %>">
+      </div> -->
+
+      <button class="btn btn-info">
+        Add Dog!
+      </button>
+      or
+      <a href="/dogs">Cancel</a>
+    </form>
+  </div>
+</div>
