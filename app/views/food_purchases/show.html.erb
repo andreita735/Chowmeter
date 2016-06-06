@@ -11,11 +11,11 @@
       <dt>Brand</dt>
       <dd><%= @food_purchase.brand %></dd>
 
-      <dt>Volume</dt>
+      <dt>Volume (lbs)</dt>
       <dd><%= @food_purchase.volume %></dd>
 
       <dt>Run out date</dt>
-      <dd><%= @food_purchase.run_out_date %></dd>
+      <dd><%= @food_purchase.run_out_date %> </dd>
 
       <!-- <dt>User</dt>
       <dd><%= @food_purchase.user_id %></dd> -->
@@ -28,16 +28,18 @@
 
       </dd>
 
+
+
     </dl>
 
     <div class="btn-group btn-group-justified">
       <a href="/food_purchases" class="btn btn-primary">
         Back
       </a>
-      <a href="/food_purchases/<%= @food_purchase.id %>/edit" class="btn btn-warning">
+      <a href="/food_purchases/<%= @food_purchase.id %>/edit" class="btn btn-default">
         Edit
       </a>
-      <a href="/delete_food_purchase/<%= @food_purchase.id %>" class="btn btn-danger" rel="nofollow">
+      <a href="/delete_food_purchase/<%= @food_purchase.id %>" class="btn btn-info" rel="nofollow">
         Delete
       </a>
     </div>

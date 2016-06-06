@@ -20,9 +20,17 @@
       <!-- <dt>Owner</dt>
       <dd><%= @dog.user_id%></dd> -->
 
-      <dt>Food will run out on </dt>
+      <dt>Food Purchase history</dt>
       <dd>
-        date
+        <ul class="list-group">
+        <% @dog.food_purchases.each do |food_purchase| %>
+          <li class="list-group-item">
+            <a href="/food_purchases/<%= food_purchase.id %>">
+              <%= food_purchase.brand %> (<%= food_purchase.run_out_date %>)
+            </a>
+          </li>
+        <% end %>
+      </ul>
     </dl>
 
 

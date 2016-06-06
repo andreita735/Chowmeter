@@ -21,7 +21,7 @@
       <!-- Label and input for purchase_date -->
       <div class="form-group">
         <label for="purchase_date" class="control-label">
-          Purchase date
+          Purchase date (dd/mm/yyyy)
         </label>
 
         <input type="text" id="purchase_date" name="purchase_date" placeholder="Purchase date" class="form-control" value="<%= @food_purchase.purchase_date %>">
@@ -39,7 +39,7 @@
       <!-- Label and input for volume -->
       <div class="form-group">
         <label for="volume" class="control-label">
-          Volume
+          Volume (lbs)
         </label>
 
         <input type="text" id="volume" name="volume" placeholder="Volume" class="form-control" value="<%= @food_purchase.volume %>">
@@ -48,20 +48,20 @@
       <!-- Label and input for run_out_date -->
       <div class="form-group">
         <label for="run_out_date" class="control-label">
-          Run out date
+          Run out date (dd/mm/yyyy)
         </label>
 
         <input type="text" id="run_out_date" name="run_out_date" placeholder="Run out date" class="form-control" value="<%= @food_purchase.run_out_date %>">
       </div>
 
       <!-- Label and input for user_id -->
-      <div class="form-group">
+      <!-- <div class="form-group">
         <label for="user_id" class="control-label">
           User
         </label>
 
         <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @food_purchase.user_id %>">
-      </div>
+      </div> -->
 
       <!-- Label and input for dog_id -->
       <div class="form-group">

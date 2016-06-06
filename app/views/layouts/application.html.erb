@@ -40,7 +40,10 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
+          <% if current_user.present? %>
           <li><a href="/food_purchases">
+            <li><%= current_user.email %></li>
+            <li>
             <i class="fa fa-history" aria-hidden="true"></i>
             Food Purchases
           </a></li>
@@ -51,6 +54,19 @@
           </a>
         </li>
           <li><a href="/rails/info">Sitemap</a></li>
+          <% else %>
+          <li>
+            <a href="/users/sign_up">
+              Sign Up
+            </a>
+          </li>
+          <li>
+            <a href="/users/sign_in">
+              Sign In
+            </a>
+          </li>
+          <% end %>
+
         </ul>
 
         <ul class="nav navbar-nav navbar-right">

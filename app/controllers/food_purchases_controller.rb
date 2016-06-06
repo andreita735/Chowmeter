@@ -5,6 +5,9 @@ class FoodPurchasesController < ApplicationController
 
   def show
     @food_purchase = FoodPurchase.find(params[:id])
+    # @food_purchase.purchase_date = params[:purchase_date]
+    #     @food_purchase.run_out_date = params[:run_out_date]
+    #     # @food_purchase_duration = (params[:run_out_date] - params[:purchase_date]).to_i
   end
 
   def new
@@ -19,6 +22,7 @@ class FoodPurchasesController < ApplicationController
     @food_purchase.run_out_date = params[:run_out_date]
     @food_purchase.user_id = params[:user_id]
     @food_purchase.dog_id = params[:dog_id]
+    # @food_purchase_duration = (params[:run_out_date] - params[:purchase_date]).to_i
 
     if @food_purchase.save
       redirect_to "/food_purchases", :notice => "Food purchase created successfully."
