@@ -1,6 +1,6 @@
 class FoodPurchasesController < ApplicationController
   def index
-    @food_purchases = FoodPurchase.all
+    @food_purchases = FoodPurchase.where(:user_id => current_user.id)
   end
 
   def show
@@ -24,7 +24,7 @@ class FoodPurchasesController < ApplicationController
     @food_purchase.dog_id = params[:dog_id]
 
     @days = @food_purchase.volume/@food_purchase.dog.consumption_per_day
-    @food_purchase.run_out_date = Date.today+@days.days 
+    @food_purchase.run_out_date = Date.today+@days.days
 
     # @food_purchase_duration = (params[:run_out_date] - params[:purchase_date]).to_i
 
