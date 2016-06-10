@@ -63,8 +63,8 @@
         <input type="text" id="picture_url" name="picture_url" placeholder="Picture url" class="form-control" value="<%= @dog.picture_url %>">
       </div>
 
-      <!-- nput for user_id -->
-<input type="hidden" id="user_id" name="user_id" value="<%= current_user.id %>">
+      <!-- Hidden input for user_id -->
+<input type="hidden" name="user_id" value="<%= current_user.id %>">
 
       <button class="btn btn-info">
         Add Dog!

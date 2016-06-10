@@ -40,12 +40,15 @@
       <a href="/dogs" class="btn btn-info">
         Back
       </a>
+
+      <% if @dog.user_id == current_user.id %>
       <a href="/dogs/<%= @dog.id %>/edit" class="btn btn-default">
         Edit
       </a>
       <a href="/delete_dog/<%= @dog.id %>" class="btn btn-primary" rel="nofollow">
         Delete
       </a>
+      <% end %>
     </div>
   </div>
 </div>

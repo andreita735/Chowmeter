@@ -25,12 +25,14 @@
         <td><%= dog.dob %></td>
         <td><%= dog.breed %></td>
         <td><%= dog.consumption_per_day %></td>
-        <!-- <td><%= dog.user.user_name%></td> -->
+
 
         <td>
           <a href="/dogs/<%= dog.id %>" class="btn btn-default">Show</a>
+
           <a href="/dogs/<%= dog.id %>/edit" class="btn btn-default">Edit</a>
           <a href="/delete_dog/<%= dog.id %>" class="btn btn-default" rel="nofollow">Delete</a>
+          
         </td>
       </tr>
       <% end %>
