@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160605152249) do
+ActiveRecord::Schema.define(version: 20160610173357) do
 
   create_table "dogs", force: :cascade do |t|
     t.string   "name"
     t.date     "dob"
     t.string   "breed"
     t.integer  "consumption_per_day"
-    t.string   "user_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "picture_url"
@@ -29,8 +29,8 @@ ActiveRecord::Schema.define(version: 20160605152249) do
     t.string   "brand"
     t.integer  "volume"
     t.date     "run_out_date"
-    t.string   "user_id"
-    t.string   "dog_id"
+    t.integer  "user_id"
+    t.integer  "dog_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
